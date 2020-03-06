@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace DRAlpha2
 {
     public partial class MadreVite : Form
     {
+        OperazioniMadreVite OperazioniMadreVite = new OperazioniMadreVite();
+
         public MadreVite()
         {
             InitializeComponent();
@@ -50,13 +53,18 @@ namespace DRAlpha2
         private void calcolaButton_Click(object sender, EventArgs e)
         {
 
-            if(string.IsNullOrWhiteSpace(DiamEsternoTextBoxMV.Text) || string.IsNullOrEmpty(heliCoilcomboBoxMV.Text)
+            if (string.IsNullOrWhiteSpace(DiamEsternoTextBoxMV.Text) || string.IsNullOrEmpty(heliCoilcomboBoxMV.Text)
                 || string.IsNullOrEmpty(TipologiaComboBoxMV.Text) || string.IsNullOrWhiteSpace(AngoloTextBoxMV.Text) || string.IsNullOrWhiteSpace(PassoTextBoxMV.Text)
                 || string.IsNullOrWhiteSpace(PrincipiTextBoxMV.Text) || string.IsNullOrEmpty(DiamMedioComboBoxMV.Text) || string.IsNullOrEmpty(DiametroInternoComboBoxMV.Text))
             {
                 MessageBox.Show("Uno o più campi non sono stati compilati");
             }
 
+            dataGridMadreVite.Rows[0].Cells[0].Value = OperazioniMadreVite.getScostamento(DiametroInternoComboBoxMV.Text, DiamMedioComboBoxMV.Text, 
+                double.Parse(PassoTextBoxMV.Text, CultureInfo.InvariantCulture));
+
+            dataGridMadreVite.Rows[0].Cells[1].Value = OperazioniMadreVite.getDiamInternoMin(double.Parse(dataGridMadreVite.Rows[0].Cells[0].Value.ToString()), DiamMedioComboBoxMV.Text, DiametroInternoComboBoxMV.Text,
+                DiamEsternoTextBoxMV.Text, double.Parse(PassoTextBoxMV.Text, CultureInfo.InvariantCulture), heliCoilcomboBoxMV.Text, TipologiaComboBoxMV.Text);
         }
 
         private void PassoTextBoxMV_TextChanged(object sender, EventArgs e)

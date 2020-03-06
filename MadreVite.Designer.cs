@@ -51,22 +51,8 @@ namespace DRAlpha2
             this.risultatoTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Scostamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diametro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tolleranza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiametroN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridMadreVite = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.BackButtonMV = new System.Windows.Forms.Button();
@@ -79,12 +65,21 @@ namespace DRAlpha2
             this.DiametroInternoComboBoxMV = new System.Windows.Forms.ComboBox();
             this.DiamMedioComboBoxMV = new System.Windows.Forms.ComboBox();
             this.DiamEsternoTextBoxMV = new System.Windows.Forms.TextBox();
+            this.Scostamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diametro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tolleranza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiametroN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.risultatoTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMadreVite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -277,9 +272,8 @@ namespace DRAlpha2
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(19)))), ((int)(((byte)(48)))));
             this.tabPage1.Controls.Add(this.dataGridView4);
-            this.tabPage1.Controls.Add(this.dataGridView3);
             this.tabPage1.Controls.Add(this.dataGridView2);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dataGridMadreVite);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -293,66 +287,12 @@ namespace DRAlpha2
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn9});
-            this.dataGridView4.Location = new System.Drawing.Point(6, 171);
+            this.dataGridView4.Location = new System.Drawing.Point(82, 119);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 51;
             this.dataGridView4.Size = new System.Drawing.Size(296, 60);
             this.dataGridView4.TabIndex = 3;
             this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.Frozen = true;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Raggio Di Fondo Min";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.Frozen = true;
-            this.dataGridViewTextBoxColumn9.HeaderText = "Raggio Di Fondo Max";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 120;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.dataGridView3.Location = new System.Drawing.Point(6, 119);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.Size = new System.Drawing.Size(453, 45);
-            this.dataGridView3.TabIndex = 2;
-            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.Frozen = true;
-            this.dataGridViewTextBoxColumn6.HeaderText = "D.Nocc.Max";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.Frozen = true;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Tolleranza";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.Frozen = true;
-            this.dataGridViewTextBoxColumn8.HeaderText = "D.Nocc.Min";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 125;
             // 
             // dataGridView2
             // 
@@ -369,92 +309,20 @@ namespace DRAlpha2
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // dataGridMadreVite
             // 
-            this.dataGridViewTextBoxColumn1.Frozen = true;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Scostamento";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.Frozen = true;
-            this.dataGridViewTextBoxColumn2.HeaderText = "D.Med.Max";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.Frozen = true;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tolleranza";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 90;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.Frozen = true;
-            this.dataGridViewTextBoxColumn4.HeaderText = "D.Med.Min";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridMadreVite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridMadreVite.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Scostamento,
             this.Diametro,
             this.Tolleranza,
             this.DiametroN});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 17);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(453, 45);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Scostamento
-            // 
-            this.Scostamento.Frozen = true;
-            this.Scostamento.HeaderText = "Scostamento";
-            this.Scostamento.MinimumWidth = 6;
-            this.Scostamento.Name = "Scostamento";
-            this.Scostamento.ReadOnly = true;
-            this.Scostamento.Width = 90;
-            // 
-            // Diametro
-            // 
-            this.Diametro.Frozen = true;
-            this.Diametro.HeaderText = "D.Est.Max";
-            this.Diametro.MinimumWidth = 6;
-            this.Diametro.Name = "Diametro";
-            this.Diametro.ReadOnly = true;
-            this.Diametro.Width = 90;
-            // 
-            // Tolleranza
-            // 
-            this.Tolleranza.Frozen = true;
-            this.Tolleranza.HeaderText = "Tolleranza";
-            this.Tolleranza.MinimumWidth = 6;
-            this.Tolleranza.Name = "Tolleranza";
-            this.Tolleranza.ReadOnly = true;
-            this.Tolleranza.Width = 90;
-            // 
-            // DiametroN
-            // 
-            this.DiametroN.Frozen = true;
-            this.DiametroN.HeaderText = "D.Est.Min";
-            this.DiametroN.MinimumWidth = 6;
-            this.DiametroN.Name = "DiametroN";
-            this.DiametroN.ReadOnly = true;
-            this.DiametroN.Width = 125;
+            this.dataGridMadreVite.Location = new System.Drawing.Point(6, 17);
+            this.dataGridMadreVite.Name = "dataGridMadreVite";
+            this.dataGridMadreVite.RowHeadersWidth = 51;
+            this.dataGridMadreVite.Size = new System.Drawing.Size(453, 45);
+            this.dataGridMadreVite.TabIndex = 0;
+            this.dataGridMadreVite.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tabPage2
             // 
@@ -602,6 +470,92 @@ namespace DRAlpha2
             this.DiamEsternoTextBoxMV.TabIndex = 77;
             this.DiamEsternoTextBoxMV.TextChanged += new System.EventHandler(this.DiamEsternoTextBoxMV_TextChanged);
             // 
+            // Scostamento
+            // 
+            this.Scostamento.Frozen = true;
+            this.Scostamento.HeaderText = "Scostamento";
+            this.Scostamento.MinimumWidth = 6;
+            this.Scostamento.Name = "Scostamento";
+            this.Scostamento.ReadOnly = true;
+            this.Scostamento.Width = 90;
+            // 
+            // Diametro
+            // 
+            this.Diametro.Frozen = true;
+            this.Diametro.HeaderText = "D.INTER.Min";
+            this.Diametro.MinimumWidth = 6;
+            this.Diametro.Name = "Diametro";
+            this.Diametro.ReadOnly = true;
+            this.Diametro.Width = 90;
+            // 
+            // Tolleranza
+            // 
+            this.Tolleranza.Frozen = true;
+            this.Tolleranza.HeaderText = "Tolleranza";
+            this.Tolleranza.MinimumWidth = 6;
+            this.Tolleranza.Name = "Tolleranza";
+            this.Tolleranza.ReadOnly = true;
+            this.Tolleranza.Width = 90;
+            // 
+            // DiametroN
+            // 
+            this.DiametroN.Frozen = true;
+            this.DiametroN.HeaderText = "D.INTER.Max";
+            this.DiametroN.MinimumWidth = 6;
+            this.DiametroN.Name = "DiametroN";
+            this.DiametroN.ReadOnly = true;
+            this.DiametroN.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.Frozen = true;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Scostamento";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.Frozen = true;
+            this.dataGridViewTextBoxColumn2.HeaderText = "D.Med.Min";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tolleranza";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 90;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "D.Med.Max";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.Frozen = true;
+            this.dataGridViewTextBoxColumn5.HeaderText = "D.MAG.min";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.Frozen = true;
+            this.dataGridViewTextBoxColumn9.HeaderText = "D.MAG.max";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 120;
+            // 
             // MadreVite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -642,9 +596,8 @@ namespace DRAlpha2
             this.risultatoTabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMadreVite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -673,22 +626,8 @@ namespace DRAlpha2
         private System.Windows.Forms.TabControl risultatoTabControl;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Scostamento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Diametro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tolleranza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiametroN;
+        private System.Windows.Forms.DataGridView dataGridMadreVite;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button BackButtonMV;
@@ -701,5 +640,15 @@ namespace DRAlpha2
         private System.Windows.Forms.ComboBox DiametroInternoComboBoxMV;
         private System.Windows.Forms.ComboBox DiamMedioComboBoxMV;
         private System.Windows.Forms.TextBox DiamEsternoTextBoxMV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Scostamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Diametro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tolleranza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiametroN;
     }
 }
