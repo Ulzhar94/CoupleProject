@@ -26,7 +26,7 @@ public class OperazioniVite
     public string ClasseDiametroEsterno { get => classeDiametroEsterno; set => classeDiametroEsterno = value; }
     public int NumeroPrincipi { get => numeroPrincipi; set => numeroPrincipi = value; }
 
-
+    //prova di modifiche
 
     public OperazioniVite() { }
 
@@ -169,47 +169,47 @@ public class OperazioniVite
             if (classeDiametroEsterno.Equals("4h") || classeDiametroEsterno.Equals("4g"))
         {
 
-            risultatoUno = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2)) / 1000 * 0.63);
+            risultatoUno = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2))) / 1000 * 0.63;
 
         }
         else if (classeDiametroEsterno.Equals("6h") || classeDiametroEsterno.Equals("6g"))
         {
 
-            risultatoUno = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2)) / 1000);
+            risultatoUno = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2))) / 1000;
 
         }
         else if (classeDiametroEsterno.Equals("4e") && passo > 0.49) // da rivedere per inserirla all'interno della riga #172
         {
-            risultatoUno = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2)) / 1000 * 0.63);
+            risultatoUno = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2))) / 1000 * 0.63;
         }
 
 
         else if (classeDiametroEsterno.Equals("6e") && passo > 0.49) // da rivedere per inserirla all'interno della riga #172
         {
-            risultatoUno = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2)) / 1000);
+            risultatoUno = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2))) / 1000;
         }
         else if ((classeDiametroEsterno.Equals("8g") || classeDiametroEsterno.Equals("8e")) && passo > 0.79) // da rivedere per inserirla all'interno della riga #172
         {
-            risultatoUno = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2)) / 1000 * 1.6);
+            risultatoUno = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2))) / 1000 * 1.6;
         }
         //calcolo secondo valore
         if (classeDiametroMedio.Equals("6g") && classeDiametroEsterno.Equals("G") || classeDiametroMedio.Equals("8g") && classeDiametroEsterno.Equals("NO") ||
             classeDiametroMedio.Equals("8e") && classeDiametroEsterno.Equals("NO"))
         {
-            risultatoDue = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2)) / 1000 * 1.6);
+            risultatoDue = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2))) / 1000 * 1.6;
         }
         else if (classeDiametroMedio.Equals("6h") && classeDiametroEsterno.Equals("NO") || classeDiametroMedio.Equals("6g") && classeDiametroEsterno.Equals("NO") ||
             classeDiametroMedio.Equals("6e") && classeDiametroEsterno.Equals("NO"))
         {
 
-            risultatoDue = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2)) / 1000);
+            risultatoDue = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2))) / 1000;
 
         }
         else if (classeDiametroMedio.Equals("4h") && classeDiametroEsterno.Equals("NO") || classeDiametroMedio.Equals("4g") && classeDiametroEsterno.Equals("NO") ||
           classeDiametroMedio.Equals("4e") && classeDiametroEsterno.Equals("NO"))
         {
 
-            risultatoDue = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2)) / 1000 * 0.6);
+            risultatoDue = ((180 * (Math.Pow(Math.Pow(passo, 2), 1 / 3))) - (3.15 / Math.Pow(passo, 1 / 2))) / 1000 * 0.6;
 
         }
         return risultatoUno + risultatoDue;

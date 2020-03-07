@@ -32,7 +32,7 @@ namespace DRAlpha2
             //DIAMETRO ESTERNO MASSIMO
             dataGridView1.Rows[0].Cells[1].Value = operazioni.GetDiametroEsternoMax(heliCoilcomboBox.GetItemText(heliCoilcomboBox.SelectedItem),
                 classeDiametroMedioTextBox.Text, double.Parse(diametroEsternoTextBox.Text, CultureInfo.InvariantCulture), double.Parse(passoTextBox.Text, CultureInfo.InvariantCulture),
-                double.Parse(angoloTextBox.Text, CultureInfo.InvariantCulture), double.Parse(dataGridView1.Rows[0].Cells[0].Value.ToString(), CultureInfo.InvariantCulture));
+                double.Parse(angoloTextBox.Text, CultureInfo.InvariantCulture), (double)dataGridView1.Rows[0].Cells[0].Value);
             dataGridView1.Columns[1].DefaultCellStyle.ForeColor = Color.Green;
 
             //TOLLERANZA UNO
@@ -41,8 +41,8 @@ namespace DRAlpha2
             dataGridView1.Columns[2].DefaultCellStyle.ForeColor = Color.Green;
 
             //DIAMETRO ESTERNO MINIMO
-            dataGridView1.Rows[0].Cells[3].Value = operazioni.GetDiametroEsternoMin(double.Parse(dataGridView1.Rows[0].Cells[1].Value.ToString(), CultureInfo.InvariantCulture),
-                double.Parse(dataGridView1.Rows[0].Cells[2].Value.ToString(), CultureInfo.InvariantCulture));
+            dataGridView1.Rows[0].Cells[3].Value = operazioni.GetDiametroEsternoMin((double)dataGridView1.Rows[0].Cells[1].Value,
+                (double)dataGridView1.Rows[0].Cells[2].Value);
             dataGridView1.Columns[3].DefaultCellStyle.ForeColor = Color.Green;
 
            //SCOSTAMENTO 2
@@ -52,7 +52,7 @@ namespace DRAlpha2
 
             //DIAMETRO MEDIO MAX
             dataGridView2.Rows[0].Cells[1].Value = operazioni.GetDiametroMedioMax(classeDiametroMedioTextBox.Text, double.Parse(passoTextBox.Text, CultureInfo.InvariantCulture),
-               double.Parse(dataGridView1.Rows[0].Cells[0].Value.ToString(), CultureInfo.InvariantCulture),double.Parse(diametroEsternoTextBox.Text, CultureInfo.InvariantCulture), 
+               (double)dataGridView1.Rows[0].Cells[0].Value,double.Parse(diametroEsternoTextBox.Text, CultureInfo.InvariantCulture), 
                heliCoilcomboBox.GetItemText(heliCoilcomboBox.SelectedItem), double.Parse(angoloTextBox.Text, CultureInfo.InvariantCulture));
             dataGridView2.Columns[1].DefaultCellStyle.ForeColor = Color.Green;
 
@@ -63,24 +63,24 @@ namespace DRAlpha2
 
             // DIAMETRO MEDIO MINIMO
             dataGridView2.Rows[0].Cells[3].Value = operazioni.GetDiametroMedioMin(heliCoilcomboBox.GetItemText(heliCoilcomboBox.SelectedItem),
-            double.Parse(dataGridView2.Rows[0].Cells[1].Value.ToString()), double.Parse(dataGridView2.Rows[0].Cells[2].Value.ToString()));
+           (double)dataGridView2.Rows[0].Cells[1].Value, (double)dataGridView2.Rows[0].Cells[2].Value);
             dataGridView2.Columns[3].DefaultCellStyle.ForeColor = Color.Green;
 
             // DIAMETRO NOCC MAX
             dataGridView3.Rows[0].Cells[0].Value = operazioni.GetDiametroNoccMax(tipologiaComboBox.GetItemText(tipologiaComboBox.SelectedItem),
-                double.Parse(dataGridView1.Rows[0].Cells[1].Value.ToString(), CultureInfo.InvariantCulture), double.Parse(passoTextBox.Text, CultureInfo.InvariantCulture));
+                (double)dataGridView1.Rows[0].Cells[1].Value, double.Parse(passoTextBox.Text, CultureInfo.InvariantCulture));
             dataGridView3.Columns[0].DefaultCellStyle.ForeColor = Color.Green;
 
             // TOLLERANZA 3 
             dataGridView3.Rows[0].Cells[1].Value = operazioni.GetTolleranzaTre(heliCoilcomboBox.GetItemText(heliCoilcomboBox.SelectedItem),
-                double.Parse(dataGridView3.Rows[0].Cells[0].Value.ToString(), CultureInfo.InvariantCulture), double.Parse(dataGridView2.Rows[0].Cells[2].Value.ToString()), 
+                (double)dataGridView3.Rows[0].Cells[0].Value, (double)dataGridView2.Rows[0].Cells[2].Value, 
                 double.Parse(passoTextBox.Text, CultureInfo.InvariantCulture), tipologiaComboBox.GetItemText(tipologiaComboBox.SelectedItem));
             dataGridView3.Columns[1].DefaultCellStyle.ForeColor = Color.Green;
 
             // DIAMETRO NOCC MIN
             dataGridView3.Rows[0].Cells[2].Value = operazioni.GetDiametroNoccMin(heliCoilcomboBox.GetItemText(heliCoilcomboBox.SelectedItem),
-                double.Parse(dataGridView3.Rows[0].Cells[0].Value.ToString()), double.Parse(dataGridView2.Rows[0].Cells[2].Value.ToString()),
-                double.Parse(dataGridView3.Rows[0].Cells[1].Value.ToString(), CultureInfo.InvariantCulture), double.Parse(passoTextBox.Text, CultureInfo.InvariantCulture), tipologiaComboBox.GetItemText(tipologiaComboBox.SelectedItem));
+                (double)dataGridView3.Rows[0].Cells[0].Value, (double)dataGridView2.Rows[0].Cells[2].Value,
+                (double)dataGridView3.Rows[0].Cells[1].Value, double.Parse(passoTextBox.Text, CultureInfo.InvariantCulture), tipologiaComboBox.GetItemText(tipologiaComboBox.SelectedItem));
             dataGridView3.Columns[2].DefaultCellStyle.ForeColor = Color.Green;
 
             // RAGGIO FONDO MIN
