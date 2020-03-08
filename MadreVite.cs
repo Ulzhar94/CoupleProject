@@ -60,11 +60,18 @@ namespace DRAlpha2
                 MessageBox.Show("Uno o più campi non sono stati compilati");
             }
 
+            /*calcolo scostamento*/
             dataGridMadreVite.Rows[0].Cells[0].Value = OperazioniMadreVite.getScostamento(DiametroInternoComboBoxMV.Text, DiamMedioComboBoxMV.Text, 
                 double.Parse(PassoTextBoxMV.Text, CultureInfo.InvariantCulture));
 
+            /*calcolo Diam interno minimo*/
             dataGridMadreVite.Rows[0].Cells[1].Value = OperazioniMadreVite.getDiamInternoMin(double.Parse(dataGridMadreVite.Rows[0].Cells[0].Value.ToString()), DiamMedioComboBoxMV.Text, DiametroInternoComboBoxMV.Text,
                 DiamEsternoTextBoxMV.Text, double.Parse(PassoTextBoxMV.Text, CultureInfo.InvariantCulture), heliCoilcomboBoxMV.Text, TipologiaComboBoxMV.Text);
+
+            /*calcolo tolleranza*/
+            dataGridMadreVite.Rows[0].Cells[2].Value = OperazioniMadreVite.getTolleranza(DiametroInternoComboBoxMV.Text, DiamMedioComboBoxMV.Text, 
+                double.Parse(PassoTextBoxMV.Text, CultureInfo.InvariantCulture));
+
         }
 
         private void PassoTextBoxMV_TextChanged(object sender, EventArgs e)

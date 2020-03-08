@@ -9,7 +9,7 @@ namespace DRAlpha2
 {
     public class OperazioniMadreVite
     {
-    
+          
         public double getScostamento(string classeDiamInterno, string classeDiamMedio, double passo)
         {
             double risultato = 0.0;
@@ -86,8 +86,8 @@ namespace DRAlpha2
             double risultato = 0.0;
             scostamento = getScostamento(classeDiamInterno, classeDiamMedio, passo);
 
-            double firstParam = double.Parse(diamEsterno, CultureInfo.InvariantCulture) * 1.082;
-            double secondParam = calculateSecondParam(heliCoil, diamEsterno);
+            double firstParam = passo * 1.082;
+            double secondParam = calculateSecondParam(heliCoil, passo);
             double thirdParam = calculateThirdParam(tipologia, passo);
 
             string condition = classeDiamMedio;
@@ -149,7 +149,154 @@ namespace DRAlpha2
             return risultato;
         }
 
-        private double calculateSecondParam(string heliCoil, string diamEsterno)
+        public double getTolleranza(string classeDiamInterno, string classeDiamMedio, double passo)
+        {
+            double firstResult = 0.0;
+            double secondResult = 0.0;
+            string firstCondition = classeDiamInterno;
+            string secondCondition = classeDiamMedio;
+
+            switch (firstCondition)
+            {
+                case "4H":
+                    if(passo >= 0.5 & passo <= 0.79)
+                    {
+                        return firstResult;
+                    }
+                    else if(passo <= 0.79)
+                    {
+                        firstResult = ((433 * passo) - (190 * Math.Pow(passo, 1.22))) * 0.63/1000;
+                    }
+                    else if(passo >= 0.8)
+                    {
+                        firstResult = ((233 * Math.Pow(passo, 0.7))) * 0.63 / 1000;
+                    }
+                    break;
+                case "4G":
+                    if(passo <= 0.79)
+                    {
+                        firstResult = ((433 * passo) - (190 * Math.Pow(passo, 1.22))) * 0.63 / 1000;
+                    }
+                    else if(passo >= 0.8)
+                    {
+                        firstResult = ((233 * Math.Pow(passo, 0.7))) * 0.63 / 1000;
+                    }
+                    break;
+                case "5H":
+                    if (passo <= 0.79)
+                    {
+                        firstResult = ((433 * passo) - (190 * Math.Pow(passo, 1.22))) * 0.8 / 1000;
+                    }
+                    else if (passo >= 0.8)
+                    {
+                        firstResult = (233 * Math.Pow(passo, 0.7)) * 0.8 / 1000;
+                    }
+                    break;
+                case "5G":
+                    if (passo <= 0.79)
+                    {
+                        firstResult = ((433 * passo) - (190 * Math.Pow(passo, 1.22))) * 0.8 / 1000;
+                    }
+                    else if (passo >= 0.8)
+                    {
+                        firstResult = (233 * Math.Pow(passo, 0.7)) * 0.8 / 1000;
+                    }
+                    break;
+                case "6H":
+                    if (passo <= 0.79)
+                    {
+                        firstResult = ((433 * passo) - (190 * Math.Pow(passo, 1.22))) / 1000;
+                    }
+                    else if (passo >= 0.8)
+                    {
+                        firstResult = (233 * Math.Pow(passo, 0.7)) / 1000;
+                    }
+                    break;
+                case "6G":
+                    if (passo <= 0.79)
+                    {
+                        firstResult = ((433 * passo) - (190 * Math.Pow(passo, 1.22))) / 1000;
+                    }
+                    else if (passo >= 0.8)
+                    {
+                        firstResult = ((233 * Math.Pow(passo, 0.7))) / 1000;
+                    }
+                    break;
+                case "7H":
+                    if (passo >= 0.5 & passo <= 0.79)
+                    {
+                        firstResult = ((433 * passo) - (190 * Math.Pow(passo, 1.22))) * 1.25 / 1000;
+                    }
+                    else if (passo >= 0.8)
+                    {
+                        firstResult = ((233 * Math.Pow(passo, 0.7))) * 1.25 / 1000;
+                    }
+                    break;
+                case "7G":
+                    if (passo >= 0.5 & passo <= 0.79)
+                    {
+                        firstResult = ((433 * passo) - (190 * Math.Pow(passo, 1.22))) * 1.25 / 1000;
+                    }
+                    else if (passo >= 0.8)
+                    {
+                        firstResult = ((233 * Math.Pow(passo, 0.7))) * 1.25 / 1000;
+                    }
+                    break;
+                case "8G":
+                    if (passo >= 0.8)
+                    {
+                        firstResult = ((233 * Math.Pow(passo, 0.7))) * 1.6 / 1000;
+                    }
+                    break;
+                case "8H":
+                    if (passo >= 0.8)
+                    {
+                        firstResult = (233 * Math.Pow(passo, 0.7)) * 1.6 / 1000;
+                    }
+                    break;
+               
+            }
+
+            switch (secondCondition)
+            {
+                case "4H":
+                    if (passo >= 0.8)
+                    {
+                        secondResult = 0.000;
+                    }        
+                    else if(passo <= 0.79 & classeDiamInterno.Equals("NO"))
+                    {
+                        secondResult = ((433 * passo) - (190 * Math.Pow(passo, 1.22))) * 0.63 / 1000;
+                    }
+                    else if(passo >= 0.8 & classeDiamInterno.Equals("NO"))
+                    {
+                        secondResult = (233 * Math.Pow(passo, 0.7)) * 0.63 / 1000;
+                    }
+                    break;
+                case "4G":
+                    break;
+                case "5H":
+                    break;
+                case "5G":
+                    break;
+                case "6H":
+                    break;
+                case "6G":
+                    break;
+                case "7H":
+                    break;
+                case "7G":
+                    break;
+                case "8G":
+                    break;
+                case "8H":
+                    break;
+            }
+
+            return firstResult + secondResult;
+        }
+
+        private double calculateSecondParam(string heliCoil, double passo)
         {
             double risultato = 0.0;
 
@@ -158,7 +305,7 @@ namespace DRAlpha2
                 return risultato;
             }
 
-            return risultato = double.Parse(diamEsterno, CultureInfo.InstalledUICulture) * 1.3;
+            return risultato = passo * 1.3;
             
         }
 
